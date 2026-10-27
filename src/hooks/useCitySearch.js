@@ -1,4 +1,4 @@
-import weatherService from "../services/weatherService.js";
+import WeatherService from "../services/weatherService.js";
 import { useState } from "react";
 function useCitySearch() {
   const [city, setCity] = useState(null);
@@ -7,16 +7,16 @@ function useCitySearch() {
   const searchCity = async (cityName) => {
     try {
       setLoading(true);
-      const res = await weatherService.searchCity(cityName);
+      const res = await WeatherService.searchCity(cityName);
       if (!res || res.length === 0) {
-        throw new Error('City not found. ');
+        throw new Error("City not found. ");
       }
       const cityData = res[0];
       setCity({
         lat: cityData.latitude,
         lon: cityData.longitude,
-        name: cityData.name
-      })
+        name: cityData.name,
+      });
       setError(null);
       return cityData;
     } catch (error) {

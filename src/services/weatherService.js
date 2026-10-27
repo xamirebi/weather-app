@@ -1,9 +1,9 @@
-import axois from 'axios';
+import axios from 'axios';
 const GEO_API = 'https://geocoding-api.open-meteo.com/v1'
 const WEATHER_API = 'https://api.open-meteo.com/v1'
-class weatherService {
+class WeatherService {
   async searchCity(query) {
-    const res = await axois.get(`${GEO_API}/search`,{
+    const res = await axios.get(`${GEO_API}/search`,{
       params: {
         name: query,
         count: 10,
@@ -12,7 +12,7 @@ class weatherService {
     return res.data.results || [];
   }
   async getWeather(lat, lon) {
-    const res = await axois.get(`${WEATHER_API}/forecast`, {
+    const res = await axios.get(`${WEATHER_API}/forecast`, {
       params: {
         latitude: lat,
         longitude: lon,
@@ -25,4 +25,4 @@ class weatherService {
     return res.data;
   }
 };
-export default new weatherService();
+export default new WeatherService();

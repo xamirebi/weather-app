@@ -1,4 +1,4 @@
-import weatherService from "../services/weatherService.js";
+import WeatherService from "../services/weatherService.js";
 import { useState, useEffect } from "react";
 function useWeatherSearch(lat, lon) {
   const [weather, setWeather] = useState(null);
@@ -10,14 +10,13 @@ function useWeatherSearch(lat, lon) {
     const fetchWeather = async () => {
       try {
         setLoading(true);
-        const res = await weatherService.getWeather(lat, lon);
+        const res = await WeatherService.getWeather(lat, lon);
         if (isMounted) {
           if (res) {
             setWeather(res);
             setError(null);
           } else {
               setError('Weather wasn\'t found. ');
-              return
           }
         }
       } catch (error) {
@@ -25,12 +24,14 @@ function useWeatherSearch(lat, lon) {
             setError(error.message || 'Failed to get the weather. ');
           }
       } finally {
-        setLoading(false);
+          if (isMounted) {
+            setLoading(false);
+          }
       }
     }
     fetchWeather();
     return () => { isMounted = false };
   }, [lat, lon]);
-  return { weather, loading, error }
+  return { weather, loading, error };
 }
 export default useWeatherSearch;

@@ -23,7 +23,7 @@ function SearchBar({ searchCity , loading }) {
         <button type="submit" 
           className="btn btn-dark btn-lg"
           disabled={loading}>
-          {loading ? (<span className='spinner-border spinner-border-sm input-group-text'></span>) : 
+          {loading ? (<span className='spinner-border spinner-border-sm'></span>) : 
           (<i className='bi bi-search'></i>)}
         </button>
       </div>

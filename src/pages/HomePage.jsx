@@ -13,7 +13,7 @@ function HomePage() {
       {weatherError && <p>{weatherError}</p>}
       {(searchLoading || weatherLoading) && <p>Loading...</p>}
       <SearchBar searchCity={searchCity} loading={searchLoading}/>
-      <CurrentWeather weather={weather} city={city}/>
+      <CurrentWeather weather={weather} cityName={city?.name}/>
     </div>
   )
 }

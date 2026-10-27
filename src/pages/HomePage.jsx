@@ -2,6 +2,7 @@ import useCitySearch from "../hooks/useCitySearch.js";
 import useWeatherSearch from "../hooks/useWeather.js";
 import SearchBar from "../components/SearchBar.jsx";
 import CurrentWeather from "../components/CurrentWeather.jsx";
+import ForeCastList from "../components/ForecastList.jsx";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 function HomePage() {
@@ -13,7 +14,8 @@ function HomePage() {
       {weatherError && <p>{weatherError}</p>}
       {(searchLoading || weatherLoading) && <p>Loading...</p>}
       <SearchBar searchCity={searchCity} loading={searchLoading}/>
-      <CurrentWeather weather={weather} cityName={city?.name}/>
+      <CurrentWeather current={weather?.current} cityName={city?.name}/>
+      <ForeCastList daily={weather?.daily} />
     </div>
   )
 }

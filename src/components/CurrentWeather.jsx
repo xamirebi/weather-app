@@ -1,6 +1,5 @@
-function CurrentWeather({ weather, cityName }) {
-  if (!weather?.current) return null;
-  const current = weather.current;
+function CurrentWeather({ current, cityName }) {
+  if (!current) return null;
   console.log(current);
   return (
     <div className="card shadow-sm p-4 mt-4 text-center">

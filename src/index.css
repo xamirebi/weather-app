@@ -1,16 +1,25 @@
 body {
   margin: 0;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  background-image: url('./assets/images/sky.jpg');
+  font-family:
+    "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
+    Arial, sans-serif;
+  background-image: url("./assets/images/sky.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.1);
+  pointer-events: none;
 }
 .search-bar {
   background-color: transparent;
   margin-right: 10px;
   border: 1px solid rgb(105, 105, 105);
 }
-.search-bar::placeholder{
+.search-bar::placeholder {
   text-align: center;
   color: white;
 }
@@ -22,14 +31,18 @@ body {
   border-radius: 20px;
   background-color: transparent;
   color: antiquewhite;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 .current-weather:hover {
   transform: scale(1.05);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 .forecast-cards {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
   border-radius: 20px;
   background-color: transparent;
   color: antiquewhite;

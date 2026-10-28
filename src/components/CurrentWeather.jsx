@@ -1,6 +1,5 @@
 function CurrentWeather({ current, cityName }) {
   if (!current) return null;
-  console.log(current);
   return (
     <div className="card shadow p-4 my-5 text-center current-weather">
       <h2 className="mb-3"><i className="bi bi-geo-alt"/> {cityName || "Your location"}</h2>

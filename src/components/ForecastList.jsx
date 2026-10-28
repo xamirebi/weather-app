@@ -2,7 +2,6 @@ import dayjs from "dayjs";
 import { getWeatherIcon } from "../utils/getWeatherIcon";
 function ForeCastList({ daily }) {
   if (!daily) return null;
-  console.log(daily);
   const days = daily.time.map((date, i) => ({
     date,
     max: daily.temperature_2m_max[i],

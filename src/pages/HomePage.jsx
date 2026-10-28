@@ -8,8 +8,8 @@ function HomePage() {
   const { weather, loading: weatherLoading, error: weatherError} = useWeatherSearch(city?.lat, city?.lon);
   return (
     <div className="container my-3">
-      {searchError && <p>{searchError}</p>}
-      {weatherError && <p>{weatherError}</p>}
+      {searchError && <div className="alert alert-danger">{searchError}</div>}
+      {weatherError && <div className="alert alert-danger">{searchError}</div>}
       <SearchBar searchCity={searchCity} loading={searchLoading}/>
       <CurrentWeather current={weather?.current} cityName={city?.name}/>
       <ForeCastList daily={weather?.daily} />

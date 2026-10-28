@@ -1,16 +1,49 @@
-# React + Vite
+Weather App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive weather application built with React and Vite. The app allows users to search for cities and view current weather conditions along with a 7-day forecast. It uses the Open-Meteo API, which is free and doesn't require an API key.
 
-Currently, two official plugins are available:
+Live Demo: https://weather-app-gsfm.onrender.com/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Features
 
-## React Compiler
+· Search for any city using the Geocoding API.
+· Display current temperature, feels-like temperature, humidity, and wind speed.
+· Show a 7-day weather forecast with custom SVG icons.
+· Responsive layout using Bootstrap.
+· Custom UI with transparent cards and hover effects.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Tech Stack
 
-## Expanding the ESLint configuration
+· React 18
+· Vite
+· Bootstrap 5
+· Axios
+· Day.js
+· Open-Meteo API
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Getting Started
+
+1. Clone the repo:
+
+   git clone https://github.com/xamirebi/weather-app.git
+
+2. Navigate to the folder:
+   
+   cd weather-app
+   
+3. Install dependencies:
+   
+   npm install
+   
+4. Run the development server:
+   
+   npm run dev
+
+5. Open http://localhost:5173 in your browser.
+
+
+
+
+Note on Deployment
+
+The app is hosted on Render's free tier. If the site hasn't been visited recently, the first load might take a few seconds while the server wakes up.

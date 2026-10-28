@@ -1,27 +1,28 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import 'bootstrap-icons/font/bootstrap-icons.css';
 import { useRef } from 'react';
 function SearchBar({ searchCity , loading }) {
   const inputRef = useRef(null);
   function handleSubmit (e) {
     e.preventDefault();
     const value = inputRef.current.value.trim();
+    if (!value) {
+    return;
+    }
     searchCity(value);
     inputRef.current.value = '';
     inputRef.current.focus();
   };
   return (
     <form onSubmit={handleSubmit}>
-      <div className="input-group input-group-lg shadow-sm">
-        <input className="form-control search-input" 
+      <div className="input-group input-group-lg my-5">
+        <input className="form-control search-bar rounded-pill" 
           disabled={loading} 
           type="text" 
-          placeholder='Search for a city...' 
+          placeholder='Search' 
           ref={inputRef}
-          autoFocus />
+          required
+          />
         <button type="submit" 
-          className="btn btn-dark btn-lg"
+          className="btn btn-dark btn-lg rounded-pill search-button"
           disabled={loading}>
           {loading ? (<span className='spinner-border spinner-border-sm'></span>) : 
           (<i className='bi bi-search'></i>)}

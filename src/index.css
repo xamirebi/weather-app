@@ -1,5 +1,40 @@
 body {
   margin: 0;
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+  background-image: url('./assets/images/sky.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.search-bar {
+  background-color: transparent;
+  margin-right: 10px;
+  border: 1px solid rgb(105, 105, 105);
+}
+.search-bar::placeholder{
+  text-align: center;
+  color: white;
+}
+.search-button {
+  background-color: transparent;
+  border: 1px solid rgb(105, 105, 105);
+}
+.current-weather {
+  border-radius: 20px;
+  background-color: transparent;
+  color: antiquewhite;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.current-weather:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+.forecast-cards {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 20px;
+  background-color: transparent;
+  color: antiquewhite;
+}
+.forecast-cards:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }

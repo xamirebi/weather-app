@@ -5,7 +5,7 @@ function useWeatherSearch(lat, lon) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   useEffect(() => {
-    if (!lat || !lon) return;
+    if (lat == null || lon == null) return;
     let isMounted = true;
     const fetchWeather = async () => {
       try {

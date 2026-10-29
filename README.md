@@ -46,4 +46,4 @@ Getting Started
 
 Note on Deployment
 
-The app is hosted on Render's free tier. If the site hasn't been visited recently, the first load might take a few seconds while the server wakes up.
+The app is hosted on Render's free tier. If the site hasn't been visited recently, the first load might take a few seconds while the server wakes up. better to use vpn to open it.

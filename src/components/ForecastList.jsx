@@ -9,7 +9,7 @@ function ForeCastList({ daily }) {
     code: daily.weather_code[i],
   }));
   return (
-    <div className="row g-5 my-5">
+    <div className="row g-3 my-5">
       {days.slice(1).map((day) => {
         return (
           <div key={day.date} className="col-6 col-md-4 col-lg-2">

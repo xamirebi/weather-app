@@ -2,7 +2,9 @@ function CurrentWeather({ current, cityName }) {
   if (!current) return null;
   return (
     <div className="card shadow p-4 my-5 text-center current-weather">
-      <h2 className="mb-3"><i className="bi bi-geo-alt"/> {cityName || "Your location"}</h2>
+      <h2 className="mb-3">
+        <i className="bi bi-geo-alt" /> {cityName || "Your location"}
+      </h2>
       <div className="display-1 mb-3">
         {Math.round(current.temperature_2m)}°C
       </div>
@@ -21,6 +23,6 @@ function CurrentWeather({ current, cityName }) {
         </div>
       </div>
     </div>
-  )
+  );
 }
 export default CurrentWeather;

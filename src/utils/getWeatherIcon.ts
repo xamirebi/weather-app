@@ -1,4 +1,4 @@
-import clear from '../assets/icons/clear-day.svg'
+import clear from '../assets/icons/clear-day.svg';
 import cloudy from '../assets/icons/cloudy.svg'
 import foggy from '../assets/icons/fog.svg'
 import rain from '../assets/icons/rain.svg'
@@ -10,7 +10,7 @@ import heavy_snow from '../assets/icons/snowflake.svg'
 import partly_cloudy from '../assets/icons/partly-cloudy-day.svg'
 import thunderstorm from '../assets/icons/thunderstorms-rain.svg'
 import slightly_rain from '../assets/icons/mostly-clear-day-rain.svg'
-const icons = {
+const icons: Record<number, string> = {
   0: clear,
   1: clear,
   2: partly_cloudy,
@@ -41,6 +41,6 @@ const icons = {
   97: thunderstorm,
   99: thunderstorm
 };
-export function getWeatherIcon(code) {
+export function getWeatherIcon(code: number): string {
   return icons[code] || "?";
 }

@@ -1,11 +1,12 @@
 import dayjs from "dayjs";
+import type { Daily } from "../services/weatherService";
 import { getWeatherIcon } from "../utils/getWeatherIcon";
-function ForeCastList({ daily }) {
+function ForeCastList({ daily }: {daily?: Daily}) {
   if (!daily) return null;
   const days = daily.time.map((date, i) => ({
     date,
-    max: daily.temperature_2m_max[i],
-    min: daily.temperature_2m_min[i],
+    max: daily.temperature_2m_max[i] ?? 0,
+    min: daily.temperature_2m_min[i] ?? 0,
     code: daily.weather_code[i],
   }));
   return (
@@ -15,7 +16,7 @@ function ForeCastList({ daily }) {
           <div key={day.date} className="col-6 col-md-4 col-lg-2">
             <div className="card text-center p-3 shadow h-100 forecast-cards">
               <div className="fw-bold mb-2">
-                {dayjs(day.date).format("ddd - D")}
+                {dayjs(day.date).format("ddd, MMM D")}
               </div>
               <div className="mt-2">
                 <strong>↑ {Math.round(day.max)}° </strong>

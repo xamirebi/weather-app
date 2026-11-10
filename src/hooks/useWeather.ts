@@ -13,7 +13,11 @@ function useWeatherSearch(
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   useEffect(() => {
-    if (lat == null || lon == null) return;
+    if (lat == null || lon == null) {
+      setWeather(null);
+      setError(null);
+      return;
+    }
     let isMounted = true;
     const fetchWeather = async () => {
       try {
@@ -24,6 +28,7 @@ function useWeatherSearch(
           setError(null);
         }
       } catch (err) {
+        console.error("Weather fetch error:", err);
         if (isMounted) {
           const message =
             err instanceof Error ? err.message : "Failed to search for weather";

@@ -1,4 +1,9 @@
-function CurrentWeather({ current, cityName }) {
+import { Current } from "../services/weatherService";
+interface CurrentWeatherProps {
+  current: Current | undefined;
+  cityName: string | undefined;
+}
+function CurrentWeather({ current, cityName }: CurrentWeatherProps) {
   if (!current) return null;
   return (
     <div className="card shadow p-4 my-5 text-center current-weather">

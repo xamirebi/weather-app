@@ -20,9 +20,12 @@ function useCitySearch(): useCitySearchResponse {
       setLoading(true);
       const res = await WeatherService.searchCity(cityName);
       if (!res || res.length === 0) {
-        throw new Error("City not found. ");
+        throw new Error("City not found.");
       }
       const cityData = res[0];
+      if (!cityData) {
+        throw new Error("City not found.");
+      }
       setCity({
         lat: cityData.latitude,
         lon: cityData.longitude,

@@ -42,5 +42,5 @@ const icons: Record<number, string> = {
   99: thunderstorm
 };
 export function getWeatherIcon(code: number): string {
-  return icons[code] || "?";
+  return icons[code] || clear;
 }

@@ -1,15 +1,20 @@
 import { useRef } from "react";
-function SearchBar({ searchCity, loading }) {
-  const inputRef = useRef(null);
-  function handleSubmit(e) {
+import type { GeoCity } from "../services/weatherService";
+interface SearchBarProps {
+  searchCity: (query: string) => Promise<GeoCity | null>;
+  loading: boolean;
+}
+function SearchBar({ searchCity, loading }: SearchBarProps) {
+  const inputRef = useRef<HTMLInputElement>(null);
+  function handleSubmit(e: React.SubmitEvent<HTMLFormElement>) {
     e.preventDefault();
-    const value = inputRef.current.value.trim();
-    if (!value) {
-      return;
-    }
+    const input = inputRef.current;
+    if (!input) return;
+    const value = input.value.trim();
+    if (!value) return;
     searchCity(value);
-    inputRef.current.value = "";
-    inputRef.current.focus();
+    input.value = "";
+    input.focus();
   }
   return (
     <form onSubmit={handleSubmit}>

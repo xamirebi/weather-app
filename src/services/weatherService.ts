@@ -1,6 +1,6 @@
 import axios from "axios";
-const GEO_API = "https://geocoding-api.open-meteo.com/v1";
-const WEATHER_API = "https://api.open-meteo.com/v1";
+const GEO_API = "/api/geo";
+const WEATHER_API = "/api/weather";
 export interface GeoCity {
   id: number;
   name: string;
@@ -16,33 +16,33 @@ export interface GeoCity {
   country: string;
   admin1?: string;
 }
-interface geoSearchResponse {
+interface GeoSearchResponse {
   results: GeoCity[];
 }
-export interface current {
+export interface Current {
   time: string;
   temperature_2m: number;
   relative_humidity_2m: number;
   apparent_temperature: number;
   weather_code: number;
-  wind_speed_2m: number;
+  wind_speed_10m: number;
 }
-export interface daily {
+export interface Daily {
   time: string[];
   temperature_2m_max: number[];
   temperature_2m_min: number[];
-  weather_code: number;
+  weather_code: number[];
 }
 export interface Tweather {
   latitude: number;
   longitude: number;
   timezone: string;
-  current: current;
-  daily: daily;
+  current: Current;
+  daily: Daily;
 }
 class WeatherService {
   async searchCity(query: string): Promise<GeoCity[]> {
-    const res = await axios.get<geoSearchResponse>(`${GEO_API}/search`, {
+    const res = await axios.get<GeoSearchResponse>(`${GEO_API}/search`, {
       params: {
         name: query,
         count: 10,

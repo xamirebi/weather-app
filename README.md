@@ -2,7 +2,7 @@ Weather App
 
 A responsive weather application built with React and Vite. The app allows users to search for cities and view current weather conditions along with a 7-day forecast. It uses the Open-Meteo API, which is free and doesn't require an API key.
 
-Live Demo: https://weather-app-gsfm.onrender.com/
+Live Demo: https://weather-app-gsfm.onrender.com/ (Use VPN)
 
 Features
 

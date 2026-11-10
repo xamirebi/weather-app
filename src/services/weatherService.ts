@@ -1,6 +1,11 @@
 import axios from "axios";
-const GEO_API = "/api/geo";
-const WEATHER_API = "/api/weather";
+const isDev = import.meta.env.DEV;
+const GEO_API = isDev
+  ? "/api/geo"
+  : "https://geocoding-api.open-meteo.com/v1";
+const WEATHER_API = isDev
+  ? "/api/weather"
+  : "https://api.open-meteo.com/v1";
 export interface GeoCity {
   id: number;
   name: string;
